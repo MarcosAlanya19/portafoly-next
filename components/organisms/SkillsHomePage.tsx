@@ -102,8 +102,8 @@ const ListItem: FC<IListItem> = ({ ...props }) => (
 export const SkillsHomePage: FC = () => {
   return (
     <Section title='Habilidades'>
-      <div className='grid gap-4 md:grid-cols-3'>
-        <CardSkill title='Lenguajes' description=''>
+      <div className='grid gap-4 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3'>
+        <CardSkill className='lg:row-span-2' title='Lenguajes' description=''>
           {skills.languages.map((data, index) => (
             <ListItem
               className={data.className}
@@ -114,25 +114,26 @@ export const SkillsHomePage: FC = () => {
           ))}
         </CardSkill>
 
-        <CardSkill title='Framework' description=''>
+        <CardSkill className='lg:row-span-2' title='Framework' description=''>
           {skills.framework.map((data, index) => (
             <ListItem key={index} text={data.text} badge={data.badge} />
           ))}
         </CardSkill>
 
-        <div className='grid gap-4'>
-          <CardSkill title='Base de datos' description=''>
-            {skills.database.map((data, index) => (
-              <ListItem key={index} text={data.text} badge={data.badge} />
-            ))}
-          </CardSkill>
+        <CardSkill className='lg:row-span-1' title='Base de datos' description=''>
+          {skills.database.map((data, index) => (
+            <ListItem key={index} text={data.text} badge={data.badge} />
+          ))}
+        </CardSkill>
 
-          <CardSkill title='Herramientas' description=''>
-            {skills.tools.map((data, index) => (
-              <ListItem key={index} text={data.text} badge={data.badge} />
-            ))}
-          </CardSkill>
-        </div>
+        <CardSkill className='lg:row-span-1' title='Herramientas' description=''>
+          {skills.tools.map((data, index) => (
+            <ListItem key={index} text={data.text} badge={data.badge} />
+          ))}
+        </CardSkill>
+        {/* <div className='grid gap-4'>
+
+        </div> */}
       </div>
     </Section>
   );

@@ -1,20 +1,17 @@
 import { useThemeStore } from '@/store/useStore';
 import { FC } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { Icon } from './Icon';
 
 export const TogleDark: FC = () => {
   const { isDarkMode, toggleDarkMode } = useThemeStore();
 
   return (
-    <button
-      className={`p-2 rounded-full ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}
-      onClick={toggleDarkMode}
-    >
+    <>
       {isDarkMode ? (
-        <FaSun className='text-gray-100' />
+        <Icon classname='rounded-full border border-sky-500/5 bg-sky-500/5 p-3 text-sky-500 transition-colors hover:border-sky-500/10 hover:bg-sky-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='sun' />
       ) : (
-        <FaMoon className='text-gray-900' />
+        <Icon classname='rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='moon' />
       )}
-    </button>
+    </>
   );
 };

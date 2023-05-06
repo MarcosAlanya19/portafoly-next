@@ -1,17 +1,17 @@
 import { FC } from 'react';
 
-interface Props {
-  text?: string;
+export interface IButton {
+  text: string;
   className?: string;
 }
 
-export const Button: FC<Props> = ({ ...props }) => {
+export const Button: FC<IButton> = ({ ...props }) => {
   return (
     <button
-      className={`${props.className} bg-indigo-600 transition-colors shadow-md shadow-indigo-500/10 hover:bg-indigo-500 text-white font-medium tracking-wide py-2 px-4 rounded-lg`}
+      className={`${props.className} dark:bg-sky-500 bg-amber-500 transition-colors shadow-md dark:shadow-sky-500/10 shadow-amber-500/10 dark:hover:bg-sky-400 hover:bg-amber-400 text-white font-medium tracking-wide py-2 px-4 rounded-lg`}
       id='btn-contact'
     >
-      Contacto
+      {props.text}
     </button>
   );
 };

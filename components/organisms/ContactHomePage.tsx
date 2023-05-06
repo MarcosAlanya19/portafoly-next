@@ -1,12 +1,15 @@
 import { FC } from 'react';
-import { Section } from '../atom';
+import { Button, Section } from '../atom';
 
 export const ContactHomePage: FC = () => {
   return (
     <Section title='Contacto'>
       <div className='grid md:grid-cols-2 mx-auto p-6'>
         <div>
-          <iframe className='w-full h-full' src='https://embed.lottiefiles.com/animation/85332'></iframe>
+          <iframe
+            className='w-full h-full'
+            src='https://embed.lottiefiles.com/animation/85332'
+          ></iframe>
         </div>
         <form>
           <div className='mb-4'>
@@ -42,12 +45,9 @@ export const ContactHomePage: FC = () => {
               className='w-full px-3 py-2 border border-gray-300 rounded'
             ></textarea>
           </div>
-          <button
-            type='submit'
-            className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'
-          >
-            Enviar
-          </button>
+          <Button
+            text='Enviar'
+          />
         </form>
       </div>
     </Section>

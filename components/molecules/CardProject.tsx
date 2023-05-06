@@ -1,40 +1,109 @@
-import { config } from '@/config';
 import Image from 'next/image';
-import { FC } from 'react';
-import { Button, Icon, Text, Title } from '../atom';
+import { FC, useEffect, useState } from 'react';
+import { Button, ICONS_MAP, Icon, Text, Title } from '../atom';
 
-export const CardProject: FC = () => {
+interface Props {
+  image: string;
+  title: string;
+  description: string;
+  languages: Array<keyof typeof ICONS_MAP>;
+  link_page?: string;
+  link_frontend?: string;
+  link_backend?: string;
+  frontend?: string;
+  backend?: string;
+}
+
+export const CardProject: FC<Props> = ({ ...props }) => {
+  const [isLike, setNotLike] = useState(false);
+  const projectId = 'unique-project-id'; // Asigna un identificador único a cada CardProject
+
+  useEffect(() => {
+    const storedValue = localStorage.getItem(projectId);
+    if (storedValue) {
+      setNotLike(storedValue === 'true');
+    }
+  }, [projectId]);
+
+  const handleToggle = () => {
+    const newValue = !isLike;
+    setNotLike(newValue);
+    localStorage.setItem(projectId, String(newValue));
+  };
+
   return (
-    <div className='flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg'>
-      <div className='relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40'>
+    <div className='w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow p-3 sm:p-2 dark:bg-gray-800 dark:border-gray-700'>
+      <div className='relative overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40'>
         <Image
-          src={config.IMG.PROJECT.GUITAR}
+          src={props.image}
           alt='img-project'
           className='w-full'
           width={500}
           height={400}
         />
         <div className='to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60'></div>
-        <button
-          className='!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
-          type='button'
-          data-ripple-dark='true'
-        >
-          <Icon type='github' />
-        </button>
+        {isLike ? (
+          <Icon
+            type='heart'
+            className='text-xl !absolute top-4 right-4 text-red-500'
+            onClick={handleToggle}
+          />
+        ) : (
+          <Icon
+            type='empty_heart'
+            className='text-xl !absolute top-4 right-4 hover:text-red-500'
+            onClick={handleToggle}
+          />
+        )}
       </div>
-      <div className='p-6'>
+      <div className='px-6 pt-6'>
         <div className='mb-3 flex items-center justify-between'>
-          <Title level='h3' text='Proyecto - GuitarLA' />
+          <Title level='h3' text={props.title} />
         </div>
-        <Text text='Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras' />
-        <div className='group mt-8 inline-flex flex-wrap items-center gap-3'>
-          <Icon type='linkedin' />
+
+        <div className='divide-y-2 divide-yellow-500 dark:divide-slate-500 '>
+          <Text classname='py-1 px-1 text-justify' text={props.description} />
+          {props.frontend && (
+            <div className='py-1 flex justify-between px-1'>
+              <Text text={'Frontend:'} />
+              <Text text={props.frontend} />
+            </div>
+          )}
+          {props.backend && (
+            <div className='py-1 flex px-1 justify-between'>
+              <Text text={'Backend:'} />
+              <Text text={props.backend} />
+            </div>
+          )}
+        </div>
+        <div className='group py-5 w-full inline-flex flex-wrap justify-center items-center gap-3'>
+          {props.languages.map((icon, index) => (
+            <Icon
+              className='rounded-full p-3 bg-amber-400 hover:bg-amber-300'
+              key={index}
+              type={icon}
+            />
+          ))}
         </div>
       </div>
-      <div className='flex justify-between gap-2 p-6'>
-        <Button text='Ver demo' className='w-full' />
-        <Button text='Ver codigo' className='w-full' />
+      <div className='flex pb-4 justify-between gap-2 px-6'>
+        {props.link_page && (
+          <a target='_blank' href={props.link_page}>
+            <Button text='Demo' className='w-full' />
+          </a>
+        )}
+
+        {props.link_frontend && (
+          <a target='_blank' href={props.link_frontend}>
+            <Button text='Frontend' className='w-full' />
+          </a>
+        )}
+
+        {props.link_backend && (
+          <a target='_blank' href={props.link_backend}>
+            <Button text='Backend' className='w-full' />
+          </a>
+        )}
       </div>
     </div>
   );

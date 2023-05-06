@@ -1,22 +1,15 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Layout } from '@/layout/Layout';
 import { FC } from 'react';
-import {
-  AboutMeHomePage,
-  ContactHomePage,
-  HeaderHomePage,
-  ProjectHomePage,
-  SkillsHomePage,
-} from '../organisms';
+import * as HP from '../organisms';
 
 export const HomePageTemplate: FC = () => {
   return (
-    <Layout pagina='Inicio' className='divide-y-2'>
-      <HeaderHomePage className='h-screen' />
-      <AboutMeHomePage />
-      <SkillsHomePage />
-      <ProjectHomePage />
-      <ContactHomePage />
+    <Layout pagina='Inicio'>
+      <HP.HeaderHomePage />
+      <HP.AboutMeHomePage />
+      <HP.SkillsHomePage />
+      <HP.ProjectHomePage />
+      <HP.ContactHomePage />
     </Layout>
   );
 };

@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import * as si from 'react-icons/Si';
 import * as ai from 'react-icons/Ai';
+import * as fa from 'react-icons/Fa';
 
-const ICONS_MAP = {
+export const ICONS_MAP = {
   close: ai.AiOutlineClose,
   docker: si.SiDocker,
   empty_heart: ai.AiOutlineHeart,
@@ -13,19 +14,22 @@ const ICONS_MAP = {
   instagram: ai.AiOutlineInstagram,
   linkedin: ai.AiFillLinkedin,
   mongodb: si.SiMongodb,
+  moon: fa.FaMoon,
   mysql: si.SiMysql,
   next: si.SiNextdotjs,
   open: ai.AiOutlineMenu,
   postgresql: si.SiPostgresql,
   react: si.SiReact,
+  sun: fa.FaSun,
   tailwind: si.SiTailwindcss,
+  strapi: si.SiStrapi,
   typescript: si.SiTypescript,
 };
 
 interface Props {
-  classname?: string;
+  className?: string;
   type: keyof typeof ICONS_MAP;
-  onClick?: (e:any) => void;
+  onClick?: (e: any) => void;
 }
 
 export const Icon: FC<Props> = ({ ...props }) => {
@@ -34,10 +38,8 @@ export const Icon: FC<Props> = ({ ...props }) => {
     return null;
   }
   return (
-    <div
-      className={`${props.classname} cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-pink-500 transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70`}
-    >
-      <IconComponent onClick={props.onClick} />
+    <div className={`${props.className} `}>
+      <IconComponent className='dark:text-white' onClick={props.onClick} />
     </div>
   );
 };
