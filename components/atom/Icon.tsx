@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import * as ai from 'react-icons/Ai';
-import * as fa from 'react-icons/Fa';
-import * as si from 'react-icons/Si';
+import * as ai from 'react-icons/ai';
+import * as fa from 'react-icons/fa';
+import * as si from 'react-icons/si';
 
 export const ICONS_MAP = {
   close: ai.AiOutlineClose,
