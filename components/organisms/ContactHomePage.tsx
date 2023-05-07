@@ -1,7 +1,5 @@
-import { FC } from 'react';
 import { Button, Section } from '../atom';
-
-export const ContactHomePage: FC = () => {
+function ContactHomePage() {
   return (
     <Section title='Contacto'>
       <div className='grid md:grid-cols-2 mx-auto p-6'>
@@ -45,11 +43,11 @@ export const ContactHomePage: FC = () => {
               className='w-full px-3 py-2 border border-gray-300 rounded'
             ></textarea>
           </div>
-          <Button
-            text='Enviar'
-          />
+          <Button text='Enviar' />
         </form>
       </div>
     </Section>
   );
-};
+}
+
+export default ContactHomePage;

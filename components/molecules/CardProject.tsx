@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
-import { Button, ICONS_MAP, Icon, Text, Title } from '../atom';
+import { ICONS_MAP, Icon, Text, Title } from '../atom';
 
 interface Props {
   image: string;
@@ -32,7 +32,7 @@ export const CardProject: FC<Props> = ({ ...props }) => {
   };
 
   return (
-    <div className='w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow p-3 sm:p-2 dark:bg-gray-800 dark:border-gray-700'>
+    <div className='w-full  bg-white border border-gray-200 rounded-lg shadow p-3 dark:bg-gray-800 dark:border-gray-700'>
       <div className='relative overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40'>
         <Image
           src={props.image}
@@ -79,31 +79,32 @@ export const CardProject: FC<Props> = ({ ...props }) => {
         <div className='group py-5 w-full inline-flex flex-wrap justify-center items-center gap-3'>
           {props.languages.map((icon, index) => (
             <Icon
-              className='rounded-full p-3 bg-amber-400 hover:bg-amber-300'
+              className='rounded-full p-3 bg-amber-400 hover:bg-amber-300 dark:hover:bg-sky-400 dark:bg-sky-500'
               key={index}
               type={icon}
             />
           ))}
         </div>
       </div>
-      <div className='flex pb-4 justify-between gap-2 px-6'>
+      <div className='grid grid-cols-2 grid-rows-2 pb-4 gap-2 px-2 md:px-6'>
         {props.link_page && (
-          <a target='_blank' href={props.link_page}>
-            <Button text='Demo' className='w-full' />
+          <a target='_blank' className='col-span-2 text-center dark:bg-sky-500 bg-amber-500 transition-colors shadow-md dark:shadow-sky-500/10 shadow-amber-500/10 dark:hover:bg-sky-400 hover:bg-amber-400 text-white font-medium tracking-wide py-2 px-4 rounded-lg' href={props.link_page}>
+            Ver Demo
           </a>
         )}
 
-        {props.link_frontend && (
-          <a target='_blank' href={props.link_frontend}>
-            <Button text='Frontend' className='w-full' />
-          </a>
-        )}
-
-        {props.link_backend && (
-          <a target='_blank' href={props.link_backend}>
-            <Button text='Backend' className='w-full' />
-          </a>
-        )}
+        <div className='w-full col-span-2 gap-2 flex justify-between '>
+          {props.link_frontend && (
+            <a target='_blank' className='text-center w-full dark:bg-sky-500 bg-amber-500 transition-colors shadow-md dark:shadow-sky-500/10 shadow-amber-500/10 dark:hover:bg-sky-400 hover:bg-amber-400 text-white font-medium tracking-wide py-2 px-4 rounded-lg' href={props.link_frontend}>
+              Frontend
+            </a>
+          )}
+          {props.link_backend && (
+            <a target='_blank' className='text-center w-full dark:bg-sky-500 bg-amber-500 transition-colors shadow-md dark:shadow-sky-500/10 shadow-amber-500/10 dark:hover:bg-sky-400 hover:bg-amber-400 text-white font-medium tracking-wide py-2 px-4 rounded-lg' href={props.link_backend}>
+              Backend
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

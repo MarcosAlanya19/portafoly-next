@@ -8,9 +8,9 @@ export const TogleDark: FC = () => {
   return (
     <>
       {isDarkMode ? (
-        <Icon classname='rounded-full border border-sky-500/5 bg-sky-500/5 p-3 text-sky-500 transition-colors hover:border-sky-500/10 hover:bg-sky-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='sun' />
+        <Icon className='cursor-pointer rounded-full border border-sky-500/5 bg-sky-500/5 p-3 text-sky-500 transition-colors hover:border-sky-500/10 hover:bg-sky-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='sun' />
       ) : (
-        <Icon classname='rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='moon' />
+        <Icon className='cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={toggleDarkMode} type='moon' />
       )}
     </>
   );

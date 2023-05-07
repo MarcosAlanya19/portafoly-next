@@ -1,35 +1,53 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 interface Props {
   className?: string;
 }
 
 export const NavOptions: FC<Props> = ({ ...props }) => {
+  const projectsRef = useRef<HTMLDivElement>(null); // Cambia el tipo HTMLDivElement por el tipo correcto de tu elemento
+
+
   return (
     <>
       <li>
-        <a
-          href='#!'
+        <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
+          // onClick={() => handleClick(refs.index)}
         >
           Inicio
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href='#about-me'
+        <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
+          // onClick={() => handleClick(refs.about_me)}
         >
           Sobre mí
-        </a>
+        </button>
       </li>
       <li>
-        <a
-          href='#projects'
+        <button
+          className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
+          // onClick={() => handleClick(refs.skills)}
+        >
+          Mis habilidades
+        </button>
+      </li>
+      <li>
+        <button
+          className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
+          // onClick={() => handleClick(refs.projects)}
+        >
+          Mis Proyectos
+        </button>
+      </li>
+      <li>
+        <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
         >
-          Proyectos
-        </a>
+          Contacto
+        </button>
       </li>
     </>
   );

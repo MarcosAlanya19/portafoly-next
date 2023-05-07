@@ -6,82 +6,86 @@ const skills = {
   database: [
     {
       text: 'PostGreSQL',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'MongoDB',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'MySQL',
-      badge: 'Popular',
+      badge: '',
     },
   ],
   tools: [
     {
       text: 'Git',
-      badge: 'Popular',
+      badge: 'Control de versiones',
+    },
+    {
+      text: 'Visual Studio Code',
+      badge: 'Editor de código',
     },
   ],
   languages: [
     {
       text: 'HTML',
-      badge: 'Popular',
+      badge: '',
       className: 'hidden md:block',
     },
     {
       text: 'CSS',
-      badge: 'Popular',
+      badge: '',
       className: 'hidden md:block',
     },
     {
       text: 'JavaScript',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'TypeScript',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'Java',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'Node',
-      badge: 'Popular',
+      badge: '',
     },
   ],
   framework: [
     {
       text: 'Tailwind',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'Next',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'React',
-      badge: 'Popular',
+      badge: 'Libreria',
     },
     {
       text: 'Express',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'Spring Boot',
-      badge: 'Popular',
+      badge: '',
     },
     {
       text: 'Nest',
-      badge: 'Popular',
+      badge: '',
     },
   ],
 };
 
 interface IListItem {
   text: string;
-  badge: string;
+  badge?: string;
   className?: string;
 }
 
@@ -92,9 +96,11 @@ const ListItem: FC<IListItem> = ({ ...props }) => (
       className='flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white'
     >
       <span className='flex-1 ml-3 whitespace-nowrap'>{props.text}</span>
-      <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'>
-        {props.badge}
-      </span>
+      {props.badge && (
+        <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'>
+          {props.badge}
+        </span>
+      )}
     </a>
   </li>
 );
@@ -131,9 +137,6 @@ export const SkillsHomePage: FC = () => {
             <ListItem key={index} text={data.text} badge={data.badge} />
           ))}
         </CardSkill>
-        {/* <div className='grid gap-4'>
-
-        </div> */}
       </div>
     </Section>
   );

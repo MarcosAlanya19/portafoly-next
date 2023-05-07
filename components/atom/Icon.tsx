@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import * as si from 'react-icons/Si';
 import * as ai from 'react-icons/Ai';
 import * as fa from 'react-icons/Fa';
+import * as si from 'react-icons/Si';
 
 export const ICONS_MAP = {
   close: ai.AiOutlineClose,
@@ -38,8 +38,8 @@ export const Icon: FC<Props> = ({ ...props }) => {
     return null;
   }
   return (
-    <div className={`${props.className} `}>
-      <IconComponent className='dark:text-white' onClick={props.onClick} />
+    <div onClick={props.onClick} className={`${props.className} `}>
+      <IconComponent className='dark:text-white' />
     </div>
   );
 };

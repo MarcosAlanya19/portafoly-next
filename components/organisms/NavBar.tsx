@@ -26,22 +26,16 @@ export const Navbar: FC = () => {
             </ul>
           </nav>
         </div>
-
-
         <div className='flex items-center'>
           <TogleDark />
-
           {isOpen ? (
             <Icon className='md:hidden' onClick={handleToggle} type='close' />
           ) : (
             <Icon className='md:hidden' onClick={handleToggle} type='open' />
           )}
-
-
           <Button text='Contacto' className='ml-4 md:ml-6' />
         </div>
       </div>
-
       <div
         className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white`}
         id='navbar'

@@ -19,7 +19,7 @@ const cardData = [
     link_backend: 'https://github.com/MarcosAlanya19/front-guitarLA-JAM',
     backend: 'Strapi',
     frontend: 'Next',
-  },
+  }
 ];
 
 export const ProjectHomePage: FC = () => {
