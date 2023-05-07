@@ -91,8 +91,7 @@ interface IListItem {
 
 const ListItem: FC<IListItem> = ({ ...props }) => (
   <li className={props.className}>
-    <a
-      href='#'
+    <div
       className='flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white'
     >
       <span className='flex-1 ml-3 whitespace-nowrap'>{props.text}</span>
@@ -101,7 +100,7 @@ const ListItem: FC<IListItem> = ({ ...props }) => (
           {props.badge}
         </span>
       )}
-    </a>
+    </div>
   </li>
 );
 
@@ -112,7 +111,7 @@ interface Props {
 export const SkillsHomePage: FC<Props> = ({ ...props }) => {
   return (
     <Section id={props.id} title='Habilidades'>
-      <div className='grid gap-4 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3'>
+      <div className='grid gap-4 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 items-center'>
         <CardSkill className='lg:row-span-2' title='Lenguajes' description=''>
           {skills.languages.map((data, index) => (
             <ListItem

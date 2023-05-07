@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { FC, useState } from 'react';
 import { Button, Icon, TogleDark } from '../atom';
 import { NavOptions } from '../molecules';
+import { useRefStore } from '@/store/useStore';
 
 export const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => setIsOpen(!isOpen);
+
+  const {scrollToElement} = useRefStore()
 
   return (
     <section
@@ -33,14 +36,15 @@ export const Navbar: FC = () => {
           ) : (
             <Icon className='mx-2 md:hidden cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={handleToggle} type='open' />
           )}
-          <Button text='Contacto' className='ml-4 md:ml-6' />
+
+          <Button onClick={() => scrollToElement('data5')} text='Contacto' className='ml-4 md:ml-6' />
         </div>
       </div>
       <div
-        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white`}
+        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white dark:bg-slate-800`}
         id='navbar'
       >
-        <ul className='mt-4 border-t-2'>
+        <ul className='mt-4 border-t-2 border-slate-700'>
           <NavOptions className='block py-2 px-4' />
         </ul>
       </div>

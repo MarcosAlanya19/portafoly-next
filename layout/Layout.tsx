@@ -18,7 +18,16 @@ export const Layout: FC<Props> = ({ ...props }) => {
     <>
       <Head>
         <title>Marcos - {props.pagina}</title>
-        <meta name='description' content='Marcos Alanya Pacheco, developer, programador, fullstack, frontend, estudiante, ingeniero de sistemas, Marcos, Alanya Pacheco' />
+        <meta
+          name='description'
+          content='Soy Marcos, un desarrollador fullstack con experiencia en la creación de aplicaciones web. Explora mi portafolio para ver mis proyectos, habilidades en desarrollo frontend y backend, y mi pasión por la tecnología.'
+        />
+        <meta
+          name='keywords'
+          content='Desarrollador Fullstack, Portafolio, Desarrollo web, Frontend, Backend, Aplicaciones web, Programador, Fullstack, Frontend, Estudiante, Ingeniero de sistemas, Proyectos, Experiencia, Habilidades, Tecnologías, Diseño web, Desarrollo web, Aplicaciones, Sitios web'
+        />
+        <meta name='robots' content='index,follow' />
+        <link rel='canonical' href='https://portafoly-next.vercel.app/' />
       </Head>
       <main className={`${isDarkMode ? 'dark' : ''}`}>
         <VerticalText
@@ -34,7 +43,9 @@ export const Layout: FC<Props> = ({ ...props }) => {
         <Navbar />
         <div className=''>
           <div className='dark:bg-slate-800'></div>
-          <div className={`${props.className} dark:bg-slate-800 dark:text-white`}>{props.children}</div>
+          <div className={`${props.className} dark:bg-slate-800 dark:text-white`}>
+            {props.children}
+          </div>
           <div className='dark:bg-slate-800'></div>
         </div>
         <Footer />

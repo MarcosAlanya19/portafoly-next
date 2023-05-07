@@ -42,9 +42,6 @@ export const NavOptions: FC<Props> = ({ ...props }) => {
           Mis Proyectos
         </button>
       </li>
-      <li>
-        <button className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`} onClick={() => scrollToElement('data5')}>Contacto</button>
-      </li>
     </>
   );
 };
