@@ -5,15 +5,18 @@ interface Props {
   id: string;
 }
 
-export const ContactHomePage: FC<Props> = ({...props}) => {
+export const ContactHomePage: FC<Props> = ({ ...props }) => {
   return (
     <Section id={props.id} title='Contacto'>
-      <div className='grid md:grid-cols-2 mx-auto p-6'>
-        <div>
-          <iframe
-            className='w-full h-full'
-            src='https://embed.lottiefiles.com/animation/85332'
-          ></iframe>
+      <div className='grid md:grid-cols-2 gap-9 mx-auto p-6'>
+        <div className='relative w-full h-full'>
+          <video
+            className='absolute top-0 left-0 w-full h-full object-cover'
+            src='https://v4.cdnpk.net/videvo_files/video/free/video0469/large_watermarked/_import_616e5d05843726.58854694_FPpreview.mp4'
+            autoPlay
+            loop
+            muted
+          ></video>
         </div>
         <form>
           <div className='mb-4'>

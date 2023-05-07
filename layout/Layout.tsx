@@ -18,7 +18,7 @@ export const Layout: FC<Props> = ({ ...props }) => {
     <>
       <Head>
         <title>Marcos - {props.pagina}</title>
-        <meta name='description' content='Marcos Alanya Pacheco, developer' />
+        <meta name='description' content='Marcos Alanya Pacheco, developer, programador, fullstack, frontend, estudiante, ingeniero de sistemas, Marcos, Alanya Pacheco' />
       </Head>
       <main className={`${isDarkMode ? 'dark' : ''}`}>
         <VerticalText

@@ -11,7 +11,7 @@ const cardData = [
     title: 'Seguimiento Pacientes - Veterinaria',
     description:
       'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
-    languages: ['react', 'typescript'] as Array<
+    languages: ['react', 'typescript', 'tailwind'] as Array<
       keyof typeof ICONS_MAP
     >,
     link_page: 'https://front-create-quotes.netlify.app/',
@@ -25,12 +25,12 @@ const cardData = [
     title: 'Guitar-LA',
     description:
       'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
-    languages: ['next', 'typescript', 'strapi', 'postgresql'] as Array<
+    languages: ['next', 'typescript', 'strapi', 'postgresql', 'tailwind'] as Array<
       keyof typeof ICONS_MAP
     >,
     link_page: 'https://guitar-la-proyect.vercel.app/',
     link_frontend: 'https://github.com/MarcosAlanya19/front-guitarLA-JAM',
-    link_backend: 'https://github.com/MarcosAlanya19/front-guitarLA-JAM',
+    link_backend: 'https://github.com/MarcosAlanya19/backend-guitarLA-JAM',
     backend: 'Strapi',
     frontend: 'Next',
   },

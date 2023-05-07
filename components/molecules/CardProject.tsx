@@ -32,7 +32,7 @@ export const CardProject: FC<Props> = ({ ...props }) => {
   };
 
   return (
-    <div className='w-full  bg-white border border-gray-200 rounded-lg shadow p-3 dark:bg-gray-800 dark:border-gray-700'>
+    <div className='w-full h-full flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow p-3 dark:bg-gray-800 dark:border-gray-700'>
       <div className='relative overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40'>
         <Image
           src={props.image}
