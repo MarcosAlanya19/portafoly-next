@@ -7,6 +7,20 @@ import { CardProject } from '../molecules';
 
 const cardData = [
   {
+    image: config.IMG.PROJECT.QUOTES,
+    title: 'Seguimiento Pacientes - Veterinaria',
+    description:
+      'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
+    languages: ['react', 'typescript'] as Array<
+      keyof typeof ICONS_MAP
+    >,
+    link_page: 'https://front-create-quotes.netlify.app/',
+    link_frontend: 'https://github.com/MarcosAlanya19/front-create-quotes',
+    link_backend: '',
+    backend: '',
+    frontend: 'React',
+  },
+  {
     image: config.IMG.PROJECT.GUITAR,
     title: 'Guitar-LA',
     description:
@@ -19,10 +33,14 @@ const cardData = [
     link_backend: 'https://github.com/MarcosAlanya19/front-guitarLA-JAM',
     backend: 'Strapi',
     frontend: 'Next',
-  }
+  },
 ];
 
-export const ProjectHomePage: FC = () => {
+interface Props {
+  id: string;
+}
+
+export const ProjectHomePage: FC<Props> = ({ ...props }) => {
   const [isLike, setNotLike] = useState(false);
 
   useEffect(() => {
@@ -46,7 +64,11 @@ export const ProjectHomePage: FC = () => {
           d='M0,128L0,128L288,128L288,160L576,160L576,128L864,128L864,160L1152,160L1152,32L1440,32L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z'
         ></path>
       </svg>
-      <Section title='Mis proyectos' className='bg-amber-300 dark:bg-[#334155]'>
+      <Section
+        id={props.id}
+        title='Mis proyectos'
+        className='bg-amber-300 dark:!bg-slate-700'
+      >
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
           {cardData.map((data, index) => (
             <CardProject

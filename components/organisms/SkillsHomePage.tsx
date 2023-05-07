@@ -105,9 +105,13 @@ const ListItem: FC<IListItem> = ({ ...props }) => (
   </li>
 );
 
-export const SkillsHomePage: FC = () => {
+interface Props {
+  id: string;
+}
+
+export const SkillsHomePage: FC<Props> = ({ ...props }) => {
   return (
-    <Section title='Habilidades'>
+    <Section id={props.id} title='Habilidades'>
       <div className='grid gap-4 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3'>
         <CardSkill className='lg:row-span-2' title='Lenguajes' description=''>
           {skills.languages.map((data, index) => (

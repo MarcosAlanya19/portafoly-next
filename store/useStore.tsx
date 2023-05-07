@@ -1,5 +1,4 @@
-import { create } from 'zustand';
-import { useRef } from 'react';
+import { GetState, SetState, create } from 'zustand';
 
 interface ThemeStore {
   isDarkMode: boolean;
@@ -12,3 +11,38 @@ export const useThemeStore = create<ThemeStore>((set) => ({
 }));
 
 /*----------------------------------------------------------------------------------------*/
+
+type Refs = {
+  data1: HTMLDivElement | null;
+  data2: HTMLDivElement | null;
+  data3: HTMLDivElement | null;
+  data4: HTMLDivElement | null;
+  data5: HTMLDivElement | null;
+};
+
+type State = {
+  refs: Refs;
+  state: Record<string, any>;
+  scrollToElement: (refName: keyof Refs) => void;
+};
+
+export const useRefStore = create<State>((set: SetState<State>, get: GetState<State>) => ({
+  refs: {
+    data1: null,
+    data2: null,
+    data3: null,
+    data4: null,
+    data5: null,
+  },
+  state: {},
+  scrollToElement: (refName) => {
+    const ref = get().refs[refName];
+    if (ref) {
+      const scrollPosition = ref.offsetTop - ref.clientHeight * 0.1;
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth',
+      });
+    }
+  },
+}));

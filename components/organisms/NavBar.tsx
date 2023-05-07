@@ -29,9 +29,9 @@ export const Navbar: FC = () => {
         <div className='flex items-center'>
           <TogleDark />
           {isOpen ? (
-            <Icon className='md:hidden' onClick={handleToggle} type='close' />
+            <Icon className='mx-2 md:hidden cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={handleToggle} type='close' />
           ) : (
-            <Icon className='md:hidden' onClick={handleToggle} type='open' />
+            <Icon className='mx-2 md:hidden cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={handleToggle} type='open' />
           )}
           <Button text='Contacto' className='ml-4 md:ml-6' />
         </div>

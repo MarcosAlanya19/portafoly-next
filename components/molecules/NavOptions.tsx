@@ -1,3 +1,4 @@
+import { useRefStore } from '@/store/useStore';
 import { FC, useRef } from 'react';
 
 interface Props {
@@ -5,15 +6,14 @@ interface Props {
 }
 
 export const NavOptions: FC<Props> = ({ ...props }) => {
-  const projectsRef = useRef<HTMLDivElement>(null); // Cambia el tipo HTMLDivElement por el tipo correcto de tu elemento
-
+  const { scrollToElement } = useRefStore();
 
   return (
     <>
       <li>
         <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
-          // onClick={() => handleClick(refs.index)}
+          onClick={() => scrollToElement('data1')}
         >
           Inicio
         </button>
@@ -21,7 +21,7 @@ export const NavOptions: FC<Props> = ({ ...props }) => {
       <li>
         <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
-          // onClick={() => handleClick(refs.about_me)}
+          onClick={() => scrollToElement('data2')}
         >
           Sobre mí
         </button>
@@ -29,7 +29,7 @@ export const NavOptions: FC<Props> = ({ ...props }) => {
       <li>
         <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
-          // onClick={() => handleClick(refs.skills)}
+          onClick={() => scrollToElement('data3')}
         >
           Mis habilidades
         </button>
@@ -37,17 +37,13 @@ export const NavOptions: FC<Props> = ({ ...props }) => {
       <li>
         <button
           className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
-          // onClick={() => handleClick(refs.projects)}
+          onClick={() => scrollToElement('data4')}
         >
           Mis Proyectos
         </button>
       </li>
       <li>
-        <button
-          className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`}
-        >
-          Contacto
-        </button>
+        <button className={`${props.className} text-gray-600 dark:text-white hover:text-gray-900 font-medium tracking-wide transition duration-300 ease-in-out`} onClick={() => scrollToElement('data5')}>Contacto</button>
       </li>
     </>
   );

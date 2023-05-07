@@ -32,7 +32,7 @@ export const Layout: FC<Props> = ({ ...props }) => {
           direction='right-0'
         />
         <Navbar />
-        <div className='grid'>
+        <div className=''>
           <div className='dark:bg-slate-800'></div>
           <div className={`${props.className} dark:bg-slate-800 dark:text-white`}>{props.children}</div>
           <div className='dark:bg-slate-800'></div>

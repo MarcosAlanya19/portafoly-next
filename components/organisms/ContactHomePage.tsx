@@ -1,7 +1,13 @@
+import { FC } from 'react';
 import { Button, Section } from '../atom';
-function ContactHomePage() {
+
+interface Props {
+  id: string;
+}
+
+export const ContactHomePage: FC<Props> = ({...props}) => {
   return (
-    <Section title='Contacto'>
+    <Section id={props.id} title='Contacto'>
       <div className='grid md:grid-cols-2 mx-auto p-6'>
         <div>
           <iframe
@@ -48,6 +54,4 @@ function ContactHomePage() {
       </div>
     </Section>
   );
-}
-
-export default ContactHomePage;
+};
