@@ -2,7 +2,7 @@ import { useThemeStore } from '@/store/useStore';
 import { FC } from 'react';
 import { Icon } from './Icon';
 
-export const TogleDark: FC = () => {
+export const ToggleDark: FC = () => {
   const { isDarkMode, toggleDarkMode } = useThemeStore();
 
   return (

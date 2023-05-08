@@ -1,9 +1,8 @@
-import { FC } from 'react';
+import { FC, ButtonHTMLAttributes } from 'react';
 
-export interface IButton {
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   className?: string;
-  onClick?: () => void;
 }
 
 export const Button: FC<IButton> = ({ ...props }) => {
@@ -11,7 +10,6 @@ export const Button: FC<IButton> = ({ ...props }) => {
     <button
       className={`${props.className} dark:bg-sky-500 bg-amber-500 transition-colors shadow-md dark:shadow-sky-500/10 shadow-amber-500/10 dark:hover:bg-sky-400 hover:bg-amber-400 text-white font-medium tracking-wide py-2 px-4 rounded-lg`}
       id='btn'
-      onClick={props.onClick}
     >
       {props.text}
     </button>

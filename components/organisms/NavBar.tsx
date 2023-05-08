@@ -1,7 +1,7 @@
 import { config } from '@/config';
 import Link from 'next/link';
 import { FC, useState } from 'react';
-import { Button, Icon, TogleDark } from '../atom';
+import { Button, Icon, ToggleDark } from '../atom';
 import { NavOptions } from '../molecules';
 import { useRefStore } from '@/store/useStore';
 
@@ -30,19 +30,17 @@ export const Navbar: FC = () => {
           </nav>
         </div>
         <div className='flex items-center'>
-          <TogleDark />
+          <ToggleDark />
           {isOpen ? (
             <Icon className='mx-2 md:hidden cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={handleToggle} type='close' />
           ) : (
             <Icon className='mx-2 md:hidden cursor-pointer rounded-full border border-amber-500/5 bg-amber-500/5 p-3 text-amber-500 transition-colors hover:border-amber-500/10 hover:bg-amber-500/10 hover:!opacity-100 group-hover:opacity-70' onClick={handleToggle} type='open' />
           )}
-
           <Button onClick={() => scrollToElement('data5')} text='Contacto' className='ml-4 md:ml-6' />
         </div>
       </div>
       <div
         className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white dark:bg-slate-800`}
-        id='navbar'
       >
         <ul className='mt-4 border-t-2 border-slate-700'>
           <NavOptions className='block py-2 px-4' />

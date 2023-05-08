@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Button, Section } from '../atom';
 
 interface Props {
@@ -6,6 +6,10 @@ interface Props {
 }
 
 export const ContactHomePage: FC<Props> = ({ ...props }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   return (
     <Section id={props.id} title='Contacto'>
       <div className='grid md:grid-cols-2 gap-9 mx-auto p-6'>
@@ -28,6 +32,8 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
               id='name'
               name='name'
               className='w-full px-3 py-2 border border-gray-300 rounded'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className='mb-4'>
@@ -39,6 +45,8 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
               id='email'
               name='email'
               className='w-full px-3 py-2 border border-gray-300 rounded'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className='mb-4'>
@@ -50,9 +58,11 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
               name='message'
               rows={4}
               className='w-full px-3 py-2 border border-gray-300 rounded'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-          <Button text='Enviar' />
+          <Button text='Enviar' type='submit' />
         </form>
       </div>
     </Section>

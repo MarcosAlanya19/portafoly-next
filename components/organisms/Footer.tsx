@@ -40,7 +40,7 @@ export const Footer: FC = () => {
       </div>
       <div className='flex items-center gap-3'>
         {iconFooter.map((data, index) => (
-          <a target='_blank' className='rounded-full bg-amber-300 transition-all hover:text-lg hover:bg-amber-100 dark:bg-sky-500 dark:hover:bg-sky-400 z-50 p-3 cursor-pointer ' key={index} href={data.href}>
+          <a target='_blank' className='rounded-full bg-amber-300 transition-all hover:text-lg hover:bg-amber-100 dark:bg-sky-500 dark:hover:bg-sky-400 z-50 p-3 cursor-pointer' key={index} href={data.href}>
             <Icon
               type={data.icon}
             />

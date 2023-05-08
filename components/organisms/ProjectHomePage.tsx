@@ -1,6 +1,6 @@
 import { config } from '@/config';
 import { FC, useEffect, useState } from 'react';
-import { ICONS_MAP, Section } from '../atom';
+import { ICONS_MAP, Section, WaveBottom, WaveTop } from '../atom';
 import { CardProject } from '../molecules';
 
 // const cardLanguages: Array<keyof typeof ICONS_MAP> = ;
@@ -11,9 +11,7 @@ const cardData = [
     title: 'Seguimiento Pacientes - Veterinaria',
     description:
       'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
-    languages: ['react', 'typescript', 'tailwind'] as Array<
-      keyof typeof ICONS_MAP
-    >,
+    languages: ['react', 'typescript', 'tailwind'] as Array<keyof typeof ICONS_MAP>,
     link_page: 'https://front-create-quotes.netlify.app/',
     link_frontend: 'https://github.com/MarcosAlanya19/front-create-quotes',
     link_backend: '',
@@ -24,7 +22,7 @@ const cardData = [
     image: config.IMG.PROJECT.GUITAR,
     title: 'Guitar-LA',
     description:
-      'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
+      'Proyecto realizado con React, respecto a un area administrativa para una veterinaria.',
     languages: ['next', 'typescript', 'strapi', 'postgresql', 'tailwind'] as Array<
       keyof typeof ICONS_MAP
     >,
@@ -58,12 +56,7 @@ export const ProjectHomePage: FC<Props> = ({ ...props }) => {
 
   return (
     <>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-        <path
-          className='fill-current text-amber-300 pb-4 dark:text-slate-700'
-          d='M0,128L0,128L288,128L288,160L576,160L576,128L864,128L864,160L1152,160L1152,32L1440,32L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z'
-        ></path>
-      </svg>
+      <WaveTop />
       <Section
         id={props.id}
         title='Mis proyectos'
@@ -86,12 +79,7 @@ export const ProjectHomePage: FC<Props> = ({ ...props }) => {
           ))}
         </div>
       </Section>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-        <path
-          className='fill-current text-amber-300 dark:text-slate-700'
-          d='M0,128L0,288L288,288L288,96L576,96L576,256L864,256L864,320L1152,320L1152,192L1440,192L1440,0L1152,0L1152,0L864,0L864,0L576,0L576,0L288,0L288,0L0,0L0,0Z'
-        ></path>
-      </svg>
+      <WaveBottom />
     </>
   );
 };

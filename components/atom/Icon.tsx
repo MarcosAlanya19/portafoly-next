@@ -28,6 +28,7 @@ export const ICONS_MAP = {
 
 interface Props {
   className?: string;
+  theme?: string
   type: keyof typeof ICONS_MAP;
   onClick?: (e: any) => void;
 }
@@ -37,8 +38,13 @@ export const Icon: FC<Props> = ({ ...props }) => {
   if (!IconComponent) {
     return null;
   }
+
+  if (props.theme === 'default') {
+
+  }
+
   return (
-    <div onClick={props.onClick} className={`${props.className} `}>
+    <div onClick={props.onClick} className={`${props.className}`}>
       <IconComponent className='dark:text-white' />
     </div>
   );

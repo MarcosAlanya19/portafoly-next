@@ -1,4 +1,4 @@
-import { GetState, SetState, create } from 'zustand';
+import { create } from 'zustand';
 
 interface ThemeStore {
   isDarkMode: boolean;
@@ -12,7 +12,7 @@ export const useThemeStore = create<ThemeStore>((set) => ({
 
 /*----------------------------------------------------------------------------------------*/
 
-type Refs = {
+export type Refs = {
   data1: HTMLDivElement | null;
   data2: HTMLDivElement | null;
   data3: HTMLDivElement | null;
@@ -26,7 +26,7 @@ type State = {
   scrollToElement: (refName: keyof Refs) => void;
 };
 
-export const useRefStore = create<State>((set: SetState<State>, get: GetState<State>) => ({
+export const useRefStore = create<State>((set, get) => ({
   refs: {
     data1: null,
     data2: null,
