@@ -18,7 +18,7 @@ export const HomePageTemplate: FC = () => {
   }, []);
 
   return (
-    <Layout pagina='Inicio'>
+    <Layout>
       <HP.HeaderHomePage id='header' />
       <HP.AboutMeHomePage id='about_me' />
       <HP.SkillsHomePage id='skills' />

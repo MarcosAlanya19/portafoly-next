@@ -6,7 +6,6 @@ import Head from 'next/head';
 import { FC } from 'react';
 
 interface Props {
-  pagina: string;
   children: JSXElement;
   className?: string;
 }
@@ -17,7 +16,7 @@ export const Layout: FC<Props> = ({ ...props }) => {
   return (
     <>
       <Head>
-        <title>Marcos - {props.pagina}</title>
+        <title>Marcos - Portafolio</title>
         <meta
           name='description'
           content='Soy Marcos, un desarrollador fullstack con experiencia en la creación de aplicaciones web. Explora mi portafolio para ver mis proyectos, habilidades en desarrollo frontend y backend, y mi pasión por la tecnología.'
