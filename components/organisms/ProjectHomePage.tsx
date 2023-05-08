@@ -21,8 +21,8 @@ const cardData = [
   {
     image: config.IMG.PROJECT.QUOTES,
     title: 'Seguimiento Pacientes - Veterinaria',
-    description:
-      'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
+        description:
+      'Proyecto realizado con React, respecto a un area administrativa para una veterinaria.',
     languages: ['react', 'typescript', 'tailwind'] as Array<keyof typeof ICONS_MAP>,
     link_page: 'https://front-create-quotes.netlify.app/',
     link_frontend: 'https://github.com/MarcosAlanya19/front-create-quotes',
@@ -34,7 +34,8 @@ const cardData = [
     image: config.IMG.PROJECT.GUITAR,
     title: 'Guitar-LA',
     description:
-      'Proyecto realizado con React, respecto a un area administrativa para una veterinaria.',
+      'Proyecto realizado con Next, respecto a una tienda de guitarras, con un carrito de compras.',
+
     languages: ['next', 'typescript', 'strapi', 'postgresql', 'tailwind'] as Array<
       keyof typeof ICONS_MAP
     >,
