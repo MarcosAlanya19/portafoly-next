@@ -9,7 +9,7 @@ interface Props {
 export const Title: FC<Props> = ({ level, text, classname }) => {
   return (
     <>
-      {level === 'h1' && <h1 className={`text-6xl md:text-7xl font-semibold ${classname}`}>{text}</h1>}
+      {level === 'h1' && <h1 className={`text-5xl sm:text-6xl md:text-7xl font-semibold ${classname}`}>{text}</h1>}
       {level === 'h2' && <h2 className={`text-4xl font-semibold ${classname}`}>{text}</h2>}
       {level === 'h3' && <h3 className={`text-xl font-semibold ${classname}`}>{text}</h3>}
     </>
