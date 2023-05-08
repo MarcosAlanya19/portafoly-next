@@ -12,7 +12,7 @@ const cardData = [
     description:
       'Un encriptador basico donde se cambian las vocales por otras letras.',
     languages: ['html' ,'css' ,'typescript'] as Array<keyof typeof ICONS_MAP>,
-    link_page: 'challenge1-one.netlify.app/',
+    link_page: 'https://challenge1-one.netlify.app/',
     link_frontend: 'https://github.com/MarcosAlanya19/Challenge-1-Oracle-One',
     link_backend: '',
     backend: '',
