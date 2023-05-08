@@ -11,7 +11,7 @@ export const HeaderHomePage: FC<Props> = ({ ...props }) => {
     <>
       <header
         id={props.id}
-        className={`${props.className} bg-no-repeat bg-cover bg-center bg-[url('/img/header-light.jpg')] dark:bg-[url('/img/header-dark.jpg')] dark:bg-slate-800 dark:text-white`}
+        className={`${props.className} bg-no-repeat bg-cover bg-center bg-[url('/img/header-light.jpg')] dark:bg-[url('/img/header-dark.jpg')] dark:text-white`}
       >
         <div className='h-screen flex flex-col text-center justify-center'>
           <Title level='h1' text='MARCOS ALANYA' />
