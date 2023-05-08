@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
-import { Button, Section } from '../atom';
+import { Anchor, Button, Section } from '../atom';
 
 interface Props {
   id: string;
@@ -45,7 +45,7 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
 
   return (
     <Section id={props.id} title='Contacto'>
-      <div className='grid md:grid-cols-2 gap-9 mx-auto p-6'>
+      <div className='md:grid md:grid-cols-2 gap-9 mx-auto px-6 pb-6'>
         <div className='relative w-full h-full'>
           <video
             className='absolute top-0 left-0 w-full h-full object-cover'
@@ -69,7 +69,7 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
                 type='text'
                 id='name'
                 name='name'
-                className='w-full px-3 py-2 border border-gray-300 rounded'
+                className='text-black w-full px-3 py-2 border border-gray-300 rounded'
               />
               <ErrorMessage name='name' component='div' className='text-red-500' />
             </div>
@@ -81,7 +81,7 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
                 type='email'
                 id='email'
                 name='email'
-                className='w-full px-3 py-2 border border-gray-300 rounded'
+                className='text-black w-full px-3 py-2 border border-gray-300 rounded'
               />
               <ErrorMessage name='email' component='div' className='text-red-500' />
             </div>
@@ -94,7 +94,7 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
                 id='message'
                 name='message'
                 rows={4}
-                className='w-full px-3 py-2 border border-gray-300 rounded resize-none'
+                className='text-black w-full px-3 py-2 border border-gray-300 rounded resize-none'
               />
               <ErrorMessage
                 name='message'
@@ -102,7 +102,15 @@ export const ContactHomePage: FC<Props> = ({ ...props }) => {
                 className='text-red-500'
               />
             </div>
-            <Button text='Enviar' type='submit' />
+            <div className='flex gap-2 flex-col lg:flex-row lg:justify-between'>
+              <Button text='Enviar' type='submit' />
+              <Anchor
+                href='https://wa.me/934737663?text=Un%20gusto,%20vengo%20desde%20tu%20portafolio.'
+                className='bg-green-600 hover:bg-green-500 dark:bg-green-600 dark:hover:bg-green-500'
+                text='Whatsapp: +51 934737663'
+                variant='button'
+              />
+            </div>
           </Form>
         </Formik>
       </div>

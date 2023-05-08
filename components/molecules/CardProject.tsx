@@ -95,16 +95,16 @@ export const CardProject: FC<Props> = ({ ...props }) => {
             href={props.link_page}
             text='Ver demo'
             variant='button'
-            classname='col-span-2'
+            className='col-span-2 w-full'
           />
         )}
 
         <div className='w-full col-span-2 gap-2 flex justify-between '>
           {props.link_frontend && (
-            <Anchor href={props.link_frontend} text='Frontend' variant='button' />
+            <Anchor href={props.link_frontend} text='Frontend' variant='button' className='w-full' />
           )}
           {props.link_backend && (
-            <Anchor href={props.link_backend} text='Backend' variant='button' />
+            <Anchor href={props.link_backend} text='Backend' variant='button' className='w-full' />
           )}
         </div>
       </div>
