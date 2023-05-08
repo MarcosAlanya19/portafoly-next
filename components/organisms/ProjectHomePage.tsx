@@ -7,6 +7,18 @@ import { CardProject } from '../molecules';
 
 const cardData = [
   {
+    image: config.IMG.PROJECT.ENCRYP,
+    title: 'Desafío de Oracle ONE',
+    description:
+      'Un encriptador basico donde se cambian las vocales por otras letras.',
+    languages: ['html' ,'css' ,'typescript'] as Array<keyof typeof ICONS_MAP>,
+    link_page: 'challenge1-one.netlify.app/',
+    link_frontend: 'https://github.com/MarcosAlanya19/Challenge-1-Oracle-One',
+    link_backend: '',
+    backend: '',
+    frontend: 'Vanilla',
+  },
+  {
     image: config.IMG.PROJECT.QUOTES,
     title: 'Seguimiento Pacientes - Veterinaria',
     description:

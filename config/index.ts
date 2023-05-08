@@ -11,6 +11,8 @@ export const config = {
         'https://raw.githubusercontent.com/MarcosAlanya19/front-guitarLA-JAM/main/public/img/homepage.PNG',
       QUOTES:
         'https://raw.githubusercontent.com/MarcosAlanya19/front-create-quotes/main/public/img.png',
+      ENCRYP:
+        'https://raw.githubusercontent.com/MarcosAlanya19/Challenge-1-Oracle-One/main/public/img.PNG',
     },
     ABOUT_ME: '/img/about-me.png',
     ABOUT: '/img/about-light.jpg',

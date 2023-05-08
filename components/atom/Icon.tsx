@@ -24,6 +24,8 @@ export const ICONS_MAP = {
   tailwind: si.SiTailwindcss,
   strapi: si.SiStrapi,
   typescript: si.SiTypescript,
+  html: si.SiHtml5,
+  css: si.SiCss3,
 };
 
 interface Props {
