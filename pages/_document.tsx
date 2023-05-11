@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
-        <meta property='og:title' content='Marcos - Portafolio' />
+        <meta property='og:title' content='Marcos Alanya - Portafolio' />
         <meta property='og:type' content='portafolio' />
         <meta
           property='og:url'
@@ -24,7 +24,6 @@ export default function Document() {
           content='Marcos Alanya,Marcos Alanya Pacheco,Desarrollador Fullstack, Portafolio, Desarrollo web, Frontend, Backend, Aplicaciones web, Programador, Fullstack, Frontend, Estudiante, Ingeniero de sistemas, Proyectos, Experiencia, Habilidades, Tecnologías, Diseño web, Desarrollo web, Aplicaciones, Sitios web'
           />
         <meta name='robots' content='index,follow' />
-        <title>MarcosAlanya-Portafolio</title>
       </Head>
       <body>
         <Main />
