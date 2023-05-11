@@ -47,10 +47,6 @@ export const Layout: FC<Props> = ({ ...props }) => {
             property: 'keywords',
             content: pageKeywords.join(', '),
           },
-          {
-            property: 'robots',
-            content: 'index,follow',
-          },
         ]}
         openGraph={{
           url: 'https://marcos-alanya-portafolio.vercel.app/',
