@@ -1,8 +1,12 @@
 import { FC } from 'react';
 
-export const WaveTop: FC = () => {
+interface Props {
+  classSvg?: string
+}
+
+export const WaveTop: FC<Props> = ({...props}) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' className={props.classSvg}>
       <path
         className='fill-current text-amber-300 pb-4 dark:text-slate-700'
         d='M0,128L0,128L288,128L288,160L576,160L576,128L864,128L864,160L1152,160L1152,32L1440,32L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z'

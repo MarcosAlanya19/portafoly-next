@@ -2,7 +2,6 @@ import axios from 'axios';
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from 'formik';
 import { FC } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import { Anchor, Button, Section } from '../atom';
 

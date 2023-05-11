@@ -12,7 +12,7 @@ export const VerticalText: FC<Props> = ({ ...props }) => {
     <div
       className={`${props.direction} ${props.className} ${
         props.type === 'vertical-text2' ? 'md:pr-5 lg:pr-9' : 'md:pl-5 lg:pl-9'
-      } md:grid hidden items-center h-screen fixed dark:text-white`}
+      } z-50 md:grid hidden items-center h-screen fixed dark:text-white`}
     >
       <div className={`${props.type} text-xl`}>
         <p>{props.text}</p>

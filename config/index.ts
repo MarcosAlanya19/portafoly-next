@@ -18,9 +18,14 @@ export const config = {
     ABOUT: '/img/about-light.jpg',
     ABOUT_DARK: '/img/test.jpg',
   },
-
   THEME: {
     BG: 'dark:bg-indigo-900',
     TEXT: 'text-white',
+  },
+  ENV: {
+    SEND_EMAIL: {
+      USER: process.env.API_SENDEMAIL_USER || '',
+      PASSWORD: process.env.API_SENDEMAIL_PASSWORD || '',
+    },
   },
 };

@@ -1,11 +1,12 @@
+import { config } from '@/config';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'asesoralanya19@gmail.com',
-    pass: 'gwmbyihnqgsjfgba',
+    user: config.ENV.SEND_EMAIL.USER,
+    pass: config.ENV.SEND_EMAIL.PASSWORD,
   },
 });
 
