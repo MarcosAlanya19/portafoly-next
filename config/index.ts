@@ -14,9 +14,10 @@ export const config = {
       ENCRYP:
         'https://raw.githubusercontent.com/MarcosAlanya19/Challenge-1-Oracle-One/main/public/img.PNG',
     },
-    ABOUT_ME: '/img/about-me.png',
-    ABOUT: '/img/about-light.jpg',
-    ABOUT_DARK: '/img/test.jpg',
+    ABOUT:
+      'https://res.cloudinary.com/dltl0daa4/image/upload/v1683769799/portafolio/about-light_pzncmg.jpg',
+    ABOUT_DARK:
+      'https://res.cloudinary.com/dltl0daa4/image/upload/v1683769793/portafolio/test_csncyn.jpg',
   },
   THEME: {
     BG: 'dark:bg-indigo-900',

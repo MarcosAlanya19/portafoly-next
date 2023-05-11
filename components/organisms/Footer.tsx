@@ -8,14 +8,6 @@ interface IFooter {
 
 const iconFooter: IFooter[] = [
   {
-    icon: 'facebook',
-    href: 'https://www.facebook.com/Marcos.AlanyaPacheco19/',
-  },
-  {
-    icon: 'instagram',
-    href: 'https://www.instagram.com/marxap/',
-  },
-  {
     icon: 'linkedin',
     href: 'https://www.linkedin.com/in/marcosalanya19/',
   },

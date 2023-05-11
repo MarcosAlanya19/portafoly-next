@@ -3,8 +3,6 @@ import { FC, useEffect, useState } from 'react';
 import { ICONS_MAP, Section, WaveBottom, WaveTop } from '../atom';
 import { CardProject } from '../molecules';
 
-// const cardLanguages: Array<keyof typeof ICONS_MAP> = ;
-
 const cardData = [
   {
     image: config.IMG.PROJECT.ENCRYP,
@@ -52,21 +50,6 @@ interface Props {
 }
 
 export const ProjectHomePage: FC<Props> = ({ ...props }) => {
-  const [isLike, setNotLike] = useState(false);
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('isLike');
-    if (storedValue) {
-      setNotLike(storedValue === 'true');
-    }
-  }, []);
-
-  const handleToggle = () => {
-    const newValue = !isLike;
-    setNotLike(newValue);
-    localStorage.setItem('isLike', String(newValue));
-  };
-
   return (
     <>
       <WaveTop />
